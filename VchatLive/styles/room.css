@@ -174,7 +174,7 @@
   height: 100%;
 }
 
-.stream__box{
+#stream__box{
   background-color: #3f434a;
   height: 60vh; 
   /* display: none; */
