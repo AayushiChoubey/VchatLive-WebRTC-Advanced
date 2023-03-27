@@ -63,6 +63,12 @@ let handleUserPublished = async (user, mediaType) => {
    
     }
 
+    if(displayFrame.style.display){
+        let videoFrame = document.getElementById(`user-container-${user.uid}`)
+        videoFrame.style.height = '100px'
+        videoFrame.style.width = '100px'
+    }
+
     if(mediaType === 'video'){
         user.videoTrack.play(`user-${user.uid}`)
     }
@@ -78,6 +84,16 @@ let handleUserLeft = async (user) => {
     let item = document.getElementById(`user-container-${user.uid}`)
     if(item){
         item.remove()
+    }
+    if(userIdInDisplayFrame === `user-container-${user.uid}`){
+        displayFrame.style.display = null
+        
+        let videoFrames = document.getElementsByClassName('video__container')
+
+        for(let i = 0; videoFrames.length > i; i++){
+            videoFrames[i].style.height = '300px'
+            videoFrames[i].style.width = '300px'
+        }
     }
 
   

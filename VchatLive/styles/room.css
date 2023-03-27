@@ -177,10 +177,10 @@
 #stream__box{
   background-color: #3f434a;
   height: 60vh; 
-  /* display: none; */
+   display: none; 
 }
 
-/* #stream__box .video__container{
+#stream__box .video__container{
   border: 2px solid #000;
   border-radius: 0;
   height: 100%!important;
@@ -191,7 +191,7 @@
 
 #stream__box video{
   border-radius: 0;
-} */
+}
 
 #streams__container{
   display: flex;
