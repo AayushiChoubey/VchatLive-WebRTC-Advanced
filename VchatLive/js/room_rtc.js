@@ -39,6 +39,7 @@ let joinStream = async () => {
                  </div>`
 console.log( document.getElementById('streams__container'))
     document.getElementById('streams__container').insertAdjacentHTML('beforeend', player)
+    document.getElementById(`user-container-${uid}`).addEventListener('click', expandVideoFrame)
 
     localTracks[1].play(`user-${uid}`)
 
@@ -58,7 +59,7 @@ let handleUserPublished = async (user, mediaType) => {
             </div>`
 
         document.getElementById('streams__container').insertAdjacentHTML('beforeend', player)
-       // document.getElementById(`user-container-${user.uid}`).addEventListener('click', expandVideoFrame)
+        document.getElementById(`user-container-${user.uid}`).addEventListener('click', expandVideoFrame)
    
     }
 
