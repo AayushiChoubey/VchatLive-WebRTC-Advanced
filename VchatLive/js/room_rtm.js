@@ -15,3 +15,20 @@ let addMemberToDom = async (MemberId) => {
 
     membersWrapper.insertAdjacentHTML('beforeend', memberItem)
 }
+
+let handleMemberLeft = async (MemberId) => {
+    console.log('A member has left the room:', MemberId)
+    removeMemberFromDom(MemberId)
+}
+
+let removeMemberFromDom = async (MemberId) => {
+    let memberWrapper = document.getElementById(`member__${MemberId}__wrapper`)
+    memberWrapper.remove()
+}
+
+let leaveChannel = async () => {
+    await channel.leave()
+    await rtmClient.logout()
+}
+
+window.addEventListener('beforeunload', leaveChannel);
