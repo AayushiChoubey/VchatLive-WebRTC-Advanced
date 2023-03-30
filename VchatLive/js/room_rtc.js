@@ -35,7 +35,7 @@ let joinRoomInit = async () => {
       rtmClient = await AgoraRTM.createInstance(APP_ID)
       await rtmClient.login({uid,token})
 
-    // // //await rtmClient.addOrUpdateLocalUserAttributes({'name':displayName})
+    await rtmClient.addOrUpdateLocalUserAttributes({'name':displayName})
 
      channel = await rtmClient.createChannel(roomId)
      await channel.join()
