@@ -32,15 +32,15 @@ let localScreenTracks;
 let sharingScreen=false;
 
 let joinRoomInit = async () => {
-     rtmClient = await AgoraRTM.createInstance(APP_ID)
-     await rtmClient.login({uid,token})
+    //  rtmClient = await AgoraRTM.createInstance(APP_ID)
+    //  await rtmClient.login({uid,token})
 
-    // //await rtmClient.addOrUpdateLocalUserAttributes({'name':displayName})
+    // // //await rtmClient.addOrUpdateLocalUserAttributes({'name':displayName})
 
-    channel = await rtmClient.createChannel(roomId)
-    await channel.join()
+    // channel = await rtmClient.createChannel(roomId)
+    // await channel.join()
 
-    channel.on('MemberJoined', handleMemberJoined)
+    // channel.on('MemberJoined', handleMemberJoined)
 
 
   client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
