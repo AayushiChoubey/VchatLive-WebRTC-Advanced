@@ -121,6 +121,19 @@ let toggleCamera = async (e) => {
     }
 }
 
-document.getElementById('camera-btn').addEventListener('click', toggleCamera)     
+let toggleMic = async (e) => {
+    let button = e.currentTarget
+
+    if(localTracks[0].muted){
+        await localTracks[0].setMuted(false)
+        button.classList.add('active')
+    }else{
+        await localTracks[0].setMuted(true)
+        button.classList.remove('active')
+    }
+}
+
+document.getElementById('camera-btn').addEventListener('click', toggleCamera) 
+document.getElementById('mic-btn').addEventListener('click', toggleMic)    
 
 joinRoomInit();
