@@ -2,6 +2,9 @@ let handleMemberJoined = async (MemberId) => {
     console.log('A new member has joined the room:', MemberId)
     addMemberToDom(MemberId)
 
+    let members = await channel.getMembers()
+    updateMemberTotal(members)
+
 }
 
 let addMemberToDom = async (MemberId) => {
@@ -16,9 +19,18 @@ let addMemberToDom = async (MemberId) => {
     membersWrapper.insertAdjacentHTML('beforeend', memberItem)
 }
 
+
+let updateMemberTotal = async (members) => {
+    let total = document.getElementById('members__count')
+    total.innerText = members.length
+}
+
 let handleMemberLeft = async (MemberId) => {
     console.log('A member has left the room:', MemberId)
     removeMemberFromDom(MemberId)
+
+    let members = await channel.getMembers()
+    updateMemberTotal(members)
 }
 
 let removeMemberFromDom = async (MemberId) => {
@@ -29,7 +41,7 @@ let removeMemberFromDom = async (MemberId) => {
 
 let getMembers = async () => {
     let members = await channel.getMembers()
-    //updateMemberTotal(members)
+     updateMemberTotal(members)
     for (let i = 0; members.length > i; i++){
         addMemberToDom(members[i])
     }
