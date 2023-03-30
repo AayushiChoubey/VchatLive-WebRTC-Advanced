@@ -26,6 +26,15 @@ let removeMemberFromDom = async (MemberId) => {
     memberWrapper.remove()
 }
 
+
+let getMembers = async () => {
+    let members = await channel.getMembers()
+    //updateMemberTotal(members)
+    for (let i = 0; members.length > i; i++){
+        addMemberToDom(members[i])
+    }
+}
+
 let leaveChannel = async () => {
     await channel.leave()
     await rtmClient.logout()

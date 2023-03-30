@@ -42,7 +42,8 @@ let joinRoomInit = async () => {
 
      channel.on('MemberJoined', handleMemberJoined)
      channel.on('MemberLeft', handleMemberLeft)
-     
+
+   getMembers();
 
 
   client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
