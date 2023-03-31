@@ -1,20 +1,30 @@
 <h1> VchatLive WebRTC</h1>
 
-A peer to peer <b>WebRTC</b> application with controls
+<h1>Deployment Link</h1>
+https://aayushichoubey.github.io/VchatLive-WebRTC-Advanced/
 
-<h3> Introduction</h3>
-This project uses WebRTC for real-time communication between two peers using Agora for signalling.<br>
+
+<h1> Introduction</h1>
+With WebRTC, you can add real-time communication capabilities to your application that works on top of an open standard. It supports video, voice, and generic data to be sent between peers, allowing developers to build powerful voice- and video-communication solutions. 
 <br>
 
-The Agora RTM Web SDK is a JavaScript library loaded by an HTML web page. The Agora RTM Web SDK library uses APIs in the web browser to establish real-time messaging services.
-
-AgoraRTM is the exported module of the Agora RTM SDK. If you import the Agora RTM Web SDK using the <script> tag, the SDK creates a global variable called AgoraRTM, which includes all the module members.
-
-Please use the RtmClient.on and RtmChannel.on methods to add event listeners to the RtmClient and RtmChannel objects.<br>
+<h4> Packages Used</h4>
+<li>Agora Video SDK </li>
 Documentation link :https://api-ref.agora.io/en/signaling-sdk/web/1.x/index.html
 
+<li>Agora RTM SDK - Signalling</li>
+Documentation link :https://api-ref.agora.io/en/signaling-sdk/web/1.x/index.html
 
-<h2>WebRTC</h2>
+<h1> Installation</h1>
+1 - clone repo: https://github.com/AayushiChoubey/VchatLive-WebRTC-Advanced<br>
+2 - Create an account on agora.io and create an app to generate an APP ID<br>
+3 - Update APP ID, Temp Token and Channel Name in room_rtc.js
+
+
+<h1>WebRTC</h1>
 The WebRTC (Web Real Time Communication) API allows us to communicate peer to peer without the hassle of setting up network communication protocols, NAT traversals, different audio and video codecs, etc.
 
 Note: NAT (Network Address Translation) is the mechanism by which the devices on a network are given public IPs to communicate on the internet.
+
+<h1> Warning</h1>
+Using this application on institute network may prevent it from working due to unusual network configurations, so use mobile data in that case.
