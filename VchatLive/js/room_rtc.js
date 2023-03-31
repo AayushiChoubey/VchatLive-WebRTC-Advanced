@@ -46,6 +46,7 @@ let joinRoomInit = async () => {
 
 
    getMembers();
+   addBotMessageToDom(`Welcome to the room ${displayName}! 👋`)
 
 
   client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
